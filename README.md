@@ -51,7 +51,7 @@
 
 <p align= "center" style= "color:#b38d25">Wire Frame</p>
 
-![Wire Frame](/assets/images/wire-frame2.jpg)
+![Wire Frame](/assets/)
 
 <br>
 
