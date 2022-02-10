@@ -72,15 +72,15 @@
                 
                 <div class="form-group"></div>
                 <label for="employee-name-input">Name</label><br>
-                <input type="text" class="form-control" placeholder="Enter Employee Name Here" required/>
+                <input type="text" class="form-control" id="emp-name" placeholder="Enter Employee Name Here" required/>
                 
                 <div class="form-group"></div>
                 <label for="employee-notes-input">Notes</label>
-                <input type="text" class="form-control" placeholder="Enter Employee Notes Here"/>
+                <input type="text" class="form-control" id="emp-notes" placeholder="Enter Employee Notes Here"/>
               
                 <div class="form-group">
                     <label for="training-name-input">Training Taken</label>
-                    <select class="form-control" id="">
+                    <select class="form-control" id="emp-training">
                       <option selected disabled>Select a Training</option>
                       <option value="training option one">training option one</option>
                       <option value="training option two">training option two</option>
@@ -91,14 +91,14 @@
 
                 <div class="form-group">
                     <label for="training-date-input">Training Date</label>
-                    <input type="text" min='1' id="" class="form-control" placeholder="Pick a Training Date"
+                    <input type="text" min='1' id="emp-date" class="form-control" placeholder="Pick a Training Date"
                       required />
                 </div>
 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-button">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" id="Submit">Save changes</button>
             </div>
           </div>
         </div>

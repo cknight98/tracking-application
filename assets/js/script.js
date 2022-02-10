@@ -4,6 +4,14 @@ var employeeNotesInputEl = $('#employee-notes-input');
 var trainingNameInputEl = $('#training-name-input');
 var trainingDateInputEl = $('#training-date-input');
 
+var employeeNames = [];
+var employeeNotes = [];
+var trainName = [];
+var trainDate = [];
+
+
+
+
 // displays current time and date in header
 // const day = document.createElement("h1");
 // day.textContent = new Date(utcTime).toLocaleDateString("en-US",{day:"numeric", month: "short", year:"numeric"});
@@ -24,7 +32,6 @@ function printEmployeeData(name, notes, trainingTaken, trainingDate) {
 
 function handleProjectFormSubmit(event) {
     event.preventDefault();
-    const 
     var employeeName = employeeNameInputEl.val().trim();
     var employeeNotes = employeeNotesInputEl.val().trim();
     var trainingName = trainingNameInputEl.val().trim();
@@ -75,3 +82,94 @@ document.addEventListener('DOMContentLoaded', function() {
 
     calendar.render();
   });
+
+
+  
+function saveEntries () {
+
+  function saveName() {
+    for (let j = 0; j < employeeNames.length; j++) {
+        var plannedEvent = employeeNames[j];
+        var savedEvent = document.getElementById(`${plannedEvent}`);
+        // planned event needs to be a different ID, it needs to be the ID's of the different entries
+        var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
+        if (storedEvent !== null) {
+            savedEvent.setAttribute("value", storedEvent);
+        }
+    }
+}
+saveName ();
+
+function saveNotes() {
+  for (let j = 0; j < employeeNotes.length; j++) {
+      var plannedEvent = employeeNotes[j];
+      var savedEvent = document.getElementById(`${plannedEvent}`);
+      // planned event needs to be a different ID, it needs to be the ID's of the different entries
+      var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
+      if (storedEvent !== null) {
+          savedEvent.setAttribute("value", storedEvent);
+      }
+  }
+}
+saveNotes();
+
+function saveTraining() {
+  for (let j = 0; j < trainName.length; j++) {
+      var plannedEvent = trainName[j];
+      var savedEvent = document.getElementById(`${plannedEvent}`);
+      // planned event needs to be a different ID, it needs to be the ID's of the different entries
+      var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
+      if (storedEvent !== null) {
+          savedEvent.setAttribute("value", storedEvent);
+      }
+  }
+}
+saveTraining();
+
+function saveDate() {
+  for (let j = 0; j < trainDate.length; j++) {
+      var plannedEvent = trainDate[j];
+      var savedEvent = document.getElementById(`${plannedEvent}`);
+      // planned event needs to be a different ID, it needs to be the ID's of the different entries
+      var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
+      if (storedEvent !== null) {
+          savedEvent.setAttribute("value", storedEvent);
+      }
+  }
+}
+saveDate();
+}
+saveEntries();
+
+
+function pushName (){
+  namevalue = document.getElementById('emp-name').value;
+  employeeNames.push(namevalue);
+  console.log(employeeNames);
+}
+
+function pushNotes () {
+  notevalue = document.getElementById('emp-notes').value;
+  employeeNotes.push(notevalue);
+  console.log(employeeNotes);
+}
+
+function pushTraining () {
+  trainvalue = document.getElementById('emp-training').value;
+  trainName.push(trainvalue);
+  console.log(trainName);
+}
+
+function pushDate () {
+  datevalue = document.getElementById('emp-date').value;
+  trainDate.push(datevalue);
+  console.log(trainDate);
+}
+
+document.getElementById('Submit').addEventListener('click',function (){
+  pushName();
+  pushNotes();
+  pushTraining();
+  pushDate();
+})
+ //this function doesn't seem to be logging to the console or saving to local 
