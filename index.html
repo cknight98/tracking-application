@@ -14,7 +14,7 @@
 
         <h1 id="title">Mandatory and Special Training</h1>
         <p id="">An application for tracking training progress/expiration dates as well as team assignments</p>
-        <p id="1a"></p>
+        <p id="time-display">00:00:00</span></p>
 
     </header>
     
@@ -26,17 +26,17 @@
                 <table class="table table-bordered custom-table">
                   <thead>
                     <tr>
-                      <td scope="col">Name</td>
-                      <td scope="col">Notes</td>
-                      <td scope="col">Name of Training</td>
-                      <td scope="col">Name of Training</td>
+                      <td id = "employee-name" scope="col">Name</td>
+                      <td id = "employee-notes" scope="col">Notes</td>
+                      <td id = "employee-training" scope="col">Name of Training</td>
+                      <td id = "employee-date" scope="col">Date of Training</td>
                     </tr>
                   </thead>
                 </table>
               </div>
         </section>
           
-        <section class="col-12 col-md-6 col-lg-3 text-center">
+        <section class="text-center">
             <div class="card custom-card">
               <h2 class="card-header">
                 Employee Training Information
@@ -53,7 +53,7 @@
                 <li class="list-group-item">Training Date</li>
               </ul>
               <div class="card-footer">
-                <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">New Trainee</button>
+                <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#training-modal" id="new-trainee-button">New Trainee</button>
               </div>
             </div>
         </section>
@@ -61,18 +61,42 @@
     </div>
     </main>
     
-    <div class="modal" tabindex="-1">
+    <div class="modal" id = "training-modal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title">Insert Employee Info</h5>
             </div>
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
+                
+                <div class="form-group"></div>
+                <label for="employee-name-input">Name</label><br>
+                <input type="text" class="form-control" placeholder="Enter Employee Name Here" required/>
+                
+                <div class="form-group"></div>
+                <label for="employee-notes-input">Notes</label>
+                <input type="text" class="form-control" placeholder="Enter Employee Notes Here"/>
+              
+                <div class="form-group">
+                    <label for="training-name-input">Training Taken</label>
+                    <select class="form-control" id="">
+                      <option selected disabled>Select a Training</option>
+                      <option value="training option one">training option one</option>
+                      <option value="training option two">training option two</option>
+                      <option value="training option three">training option three</option>
+                      <option value="training option four">training option four</option>
+                    </select>
+                  </div>
+
+                <div class="form-group">
+                    <label for="training-date-input">Training Date</label>
+                    <input type="text" min='1' id="" class="form-control" placeholder="Pick a Training Date"
+                      required />
+                </div>
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-button">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
@@ -81,7 +105,7 @@
 
     <footer class="footer">
 
-        <h1>©CCC</h1>
+        <h5>©CCC</h5>
 
     </footer>
 
