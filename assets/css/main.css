@@ -329,7 +329,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   direction: rtl;
 }
 .fc-theme-standard .fc-scrollgrid {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(194, 149, 149);
   border: 1px solid var(--fc-border-color, #ddd); /* bootstrap does this. match */
 }
 .fc .fc-scrollgrid,
@@ -380,14 +380,15 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-scrollgrid-section-body table,
 .fc .fc-scrollgrid-section-footer table {
   border-bottom-style: hidden; /* head keeps its bottom border tho */
-  background-color: #ebeef0;
+  background-color: #d2e9f8;
   border: 2pt solid #000000;
+  font-weight: bold;
 }
 .fc {
   /* stickiness */
 }
 .fc .fc-scrollgrid-section-sticky > * {
-  background: #fff;
+  background: rgb(214, 138, 138);
   background: var(--fc-page-bg-color, #fff);
   position: sticky;
   z-index: 3; /* TODO: var */
@@ -837,7 +838,7 @@ A HORIZONTAL event
   padding: 2px;
   min-width: 1.5em;
   text-align: center;
-  background-color: rgba(208, 208, 208, 0.3);
+  background-color: rgba(241, 201, 201, 0.3);
   background-color: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3));
   color: #808080;
   color: var(--fc-neutral-text-color, #808080);
