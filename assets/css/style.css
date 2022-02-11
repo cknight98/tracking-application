@@ -110,7 +110,7 @@ td {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #eee4ae;
   top: 50%;
   left: 50%;
   bottom: 50%;
@@ -118,7 +118,7 @@ td {
   max-width: 100%;
   position: relative;
   border-radius: 10px;
-  border: 15px solid gray;
+  border: 20px solid #574848;
   width: 30%; /* Could be more or less, depending on screen size */
   height: 80%;
   transform: translate(-50%, -50%);
