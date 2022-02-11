@@ -1,3 +1,12 @@
+const dateTime = document.querySelector("span")
+dateTime.textContent = new Date().toLocaleDateString("en-US", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  hour: "numeric",
+  minute: "numeric"
+ 
+});
 
 var employeeNameInputEl = $('#employee-name-input');
 var employeeNotesInputEl = $('#employee-notes-input');
@@ -24,7 +33,6 @@ function printEmployeeData(name, notes, trainingTaken, trainingDate) {
 
 function handleProjectFormSubmit(event) {
     event.preventDefault();
-    const 
     var employeeName = employeeNameInputEl.val().trim();
     var employeeNotes = employeeNotesInputEl.val().trim();
     var trainingName = trainingNameInputEl.val().trim();
@@ -35,17 +43,6 @@ function handleProjectFormSubmit(event) {
 }
 
 
-// opens modal
-$('#new-trainee-button').on('click', function() {
-    console.log("button works")
-    $('#training-modal').show();
-});
-
-// closes modal
-$('#close-button').on('click', function() {
-    console.log("button works")
-    $('#training-modal').hide();
-});
 /* CALENDER API  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -75,3 +72,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     calendar.render();
   });
+  // MODAL
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("open-modal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("close");
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// opens modal
+$("#Submit").click(function(){
+    $("#a").css("display","block");
+    $("#b").css("display","block");
+                });
+
+
+$(".Cancel").click(function(){
+    $("#a").fadeOut();
+    $("#b").fadeOut();
+});

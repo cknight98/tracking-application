@@ -1,98 +1,401 @@
-
+/* Main Style */
 body {
-    height: 100%;
-    position: relative;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1;
-    background-color: #ffffff;
+  height: 100%;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background-color: #ffffff;
+}
+
+span{
+  font-size: 18pt;
+  color:#3a6341;
+  font-weight: 800;
+}
+
+td {
+  border: 1pt solid black;
+  padding: 10pt;
+  
+}
+/* classes */
+.header {
+  text-align: center;
+}
+
+#name {
+  width: 25%;
+}
+
+.table-responsive {
+  margin-bottom: 20px;
+  margin-top: 35pt;
+
+}
+
+.custom-table {
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+
+
+.directions {
+  margin-top: 55pt;
+  margin-bottom: 50pt;
+  padding: 5pt;
+  border-top: 1pt solid #000000;
+  border-bottom: 1pt solid #000000;
+  text-align: center;
+}
+
+.training {
+  padding-left: 50pt;
+  padding-right: 50pt;
+  margin-left: 35pt;
+  width: 250pt;
+}
+
+.footer {
+  position: absolute;
+  padding: 20px;
+  bottom: 0px;
+  width: 100%;
+  clear: both;
+  border-top: 2pt solid #000000;
+  background-image: linear-gradient(
+    to right,
+    #000000,
+    #8c8c9e 1020px,
+    #000000 1450px
+  );
+}
+
+.footer h2 {
+  font-family: "Arial", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* Modal */
+
+/* The Modal (background) */
+#open-modal {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 15pt;
+  padding: 15pt;
+  width: 15%;
+  border-radius: 25px;
+  margin-top: 10pt;
+  margin-left: 41%;
+  margin-bottom: 25pt;
+}
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  opacity: solid;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  top: 50%;
+  left: 50%;
+  bottom: 50%;
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+  border-radius: 10px;
+  border: 15px solid gray;
+  width: 30%; /* Could be more or less, depending on screen size */
+  height: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-header {
+  /*   align-items: stretch; */
+  box-shadow: 0 3px 1px rgb(10 10 10 / 10%);
+  display: flex;
+  padding-left: 38%;
+  border-bottom: 1pt solid grey;
+}
+
+.modal-header-title {
+  align-items: center;
+  color: #363636;
+  display: flex;
+  flex-grow: 1;
+  font-weight: 700;
+  padding: 5px 5px;
+}
+.modal-header-icon {
+  background: 0 0;
+  border: none;
+  color: currentColor;
+  font-family: inherit;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+
+#modal-content.animation-1 {
+  animation: animation-1 0.5s forwards;
+}
+.modal-text-area {
+  /* background-color: red; */
+  color: #808080;
+  border: 2pt solid #000000;
+  width: 85%;
+  padding: 1%;
+  border-radius: 3px;
+  display: block;
+  margin-left: 2%;
+  margin-top: 10px;
+  margin-bottom: 5pt;
+  font-family: Arial;
+  font-size: 1rem;
+  font-weight: 300;
+}
+form {
+  margin-top: 0px;
+}
+
+form select {
+  margin-left: 500%;
+}
+
+.modal-body {
+  margin-top: 20pt;
+  margin-left: 50pt;
+  margin-right: 30pt;
+  margin-bottom: 20pt;
+}
+
+.modal-buttons {
+  margin-left: 40%;
+}
+
+.modal-footer {
+  margin-bottom: 50pt;
+}
+
+@keyframes animation-1 {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
   }
-  
-  
-  
-  .header {
-      text-align: center;
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
   }
-  
-  
-  
-  .footer {
-    position: absolute;
-    padding: 20px;
-    bottom: 0px;
-    width: 100%;
-    clear: both;
-    text-align: center;
-    border-top: 2pt solid #000000;
-    background-image: linear-gradient(to right, #000000, #8c8c9e 1180px, #000000 1600px)
+  70% {
+    transform: translate(-50%, -50%) scale(0.9);
   }
-  
-  .footer h2 {
-    font-family: 'Arial', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
-    font-weight: 900;
-    font-size: 25px;
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
-  
-  #submit-button {
-    position: absolute;
-    right: 70px;
+}
+
+/* ids */
+#instructions {
+  border-bottom: 1pt solid #000000;
+  padding-bottom: 25pt;
+  margin-top: 25pt;
+}
+
+/* Page Counter API */
+.counterapi {
+  position: absolute;
+  right: 46%;
+  bottom: 90pt;
+  margin: 0;
+  padding: 0;
+}
+
+/* Calendar */
+#calendar {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+#calendar-box {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  padding-bottom: 130px;
+}
+
+#currentDay {
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+#script-warning {
+  display: none;
+  background: #eee;
+  border-bottom: 2px solid #550808;
+  padding: 0 10px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: red;
+}
+
+#loading {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Media changes */
+
+@media only screen and (max-width: 1280px) {
+  .modal-content {
+    width: 40%; /* Could be more or less, depending on screen size */
   }
-  
-  
-  
-  
-  .counterapi {
-    position: absolute;
-    right: 48%;
-    bottom: 70pt;
-    margin: 0;
-    padding: 0;
+  .modal-header {
+    /*   align-items: stretch; */
+    box-shadow: 0 3px 1px rgb(10 10 10 / 10%);
+    display: flex;
+    padding-left: 38%;
+    border-bottom: 1pt solid grey;
+}
+
+.modal-buttons {
+  margin-left: 38%;
+}
+
+td {
+  border: 1pt solid black;
+  padding: 8pt;
+  width: 10015pt;
+}
+.custom-table {
+  text-align: center;
+  width: 220%;
+  margin: auto;
+}
+}
+@media only screen and (max-width: 1045px) {
+  .modal-content {
+    width: 70%; /* Could be more or less, depending on screen size */
+   }
+   .modal-header {
+    /*   align-items: stretch; */
+    box-shadow: 0 3px 1px rgb(10 10 10 / 10%);
+    display: flex;
+    padding-left: 34%;
+    border-bottom: 1pt solid grey;
+}
+
+.modal-buttons {
+  margin-left: 33%;
+}
+td {
+  border: 1pt solid black;
+  padding: 8pt;
+  width: 10015pt;
+}
+.custom-table {
+  text-align: center;
+  width: 220%;
+  margin: auto;
+}
+}
+
+@media only screen and (max-width: 950px) {
+  .modal-content {
+    width: 55%; /* Could be more or less, depending on screen size */
   }
-  
-  
-  
-  
-  
-  
-  #currentDay{
-    font-size: 30px;
-    margin-top: 25px;
+  .modal-header {
+    /*   align-items: stretch; */
+    box-shadow: 0 3px 1px rgb(10 10 10 / 10%);
+    display: flex;
+    padding-left: 37%;
+    border-bottom: 1pt solid grey;
+}
+
+.modal-buttons {
+  margin-left: 37%;
+}
+/* Page Counter API */
+.counterapi {
+  position: absolute;
+  right: 41%;
+  bottom: 90pt;
+}
+
+td {
+  border: 1pt solid black;
+  padding: 8pt;
+}
+.custom-table {
+  text-align: center;
+  width: 120%;
+  margin: auto;
+}
+}
+
+@media only screen and (max-width: 850px) {
+
+  #open-modal {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 15pt;
+    padding: 15pt;
+    width: 45%;
+    border-radius: 25px;
+    margin-top: 10pt;
+    margin-left: 30%;
+    margin-bottom: 25pt;
   }
-  
-  #script-warning {
-    display: none;
-    background: #eee;
-    border-bottom: 2px solid #550808;
-    padding: 0 10px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    color: red;
+  .modal-content {
+    width: 75%; /* Could be more or less, depending on screen size */
   }
-  
-  #loading {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  #calendar {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 10px;
-  }
-  
-  
-  
-  #calendar-box {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-    padding-bottom: 130px;
-  }
-  
-  
-  
+  .modal-header {
+    /*   align-items: stretch; */
+    box-shadow: 0 3px 1px rgb(10 10 10 / 10%);
+    display: flex;
+    padding-left: 37%;
+    border-bottom: 1pt solid grey;
+}
+
+.modal-buttons {
+  margin-left: 30%;
+}
+/* Page Counter API */
+.counterapi {
+  position: absolute;
+  right: 41%;
+  bottom: 90pt;
+}
+
+td {
+  border: 1pt solid black;
+  padding: 6pt;
+}
+.custom-table {
+  text-align: center;
+  width: 220%;
+  margin: auto;
+}
+}
