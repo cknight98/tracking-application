@@ -5,7 +5,7 @@ body {
     sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-color: #ffffff;
+  background-color: #fdf5e6;
 }
 
 span{
@@ -17,6 +17,7 @@ span{
 td {
   border: 1pt solid black;
   padding: 10pt;
+  background-color: #ffffff;
   
 }
 /* main page classes */
@@ -26,7 +27,7 @@ td {
 
 .directions {
   margin-top: 55pt;
-  margin-bottom: 50pt;
+  margin-bottom: 20pt;
   padding: 5pt;
   border-top: 1pt solid #000000;
   border-bottom: 1pt solid #000000;
@@ -217,7 +218,7 @@ form {
   padding: 15pt;
   width: 15%;
   border-radius: 25px;
-  margin-top: 10pt;
+  margin-top: 5pt;
   margin-left: 43%;
   margin-bottom: 25pt;
 }

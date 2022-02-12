@@ -18,14 +18,10 @@
 
 <h1 style= "color:#883030">Completed</h1>
 <p align= "center">
-<li>We used at least two server-side APIs (mail api and Calender Api)</li>
-<li>We used CSS framework other than Bootstrap</li>
-<li>Must use client-side storage to store persistent data</li>
-<li>The page has a polished UI</li>
-<li>App is made with good quality coding standards (indentation, scoping, naming, etc.)</li>
-<li>App uses a modal </li>
-<li>App has been deployed to GitHub Pages</li>
-<li>App is user interactive (i.e: accept and respond to user input)</li>
+<li>We used two server-side APIs (Calender API and Page Counter API)</li>
+<li>We used CSS framework</li>
+<li>To save our data we use the localstorage</li>
+<li>The app uses a modal to put info on the page</li>
 </p>
 <br>
 <br>
@@ -33,7 +29,7 @@
 <h1 style= "color:#883030">Links</h1>
 
 
- ## [Tracker](https://cknight98.github.io/tracking-application/)
+ ## [Training Tracker](https://cknight98.github.io/tracking-application/)
 <br>
 <br>
 
