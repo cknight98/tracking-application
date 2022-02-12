@@ -8,10 +8,6 @@ dateTime.textContent = new Date().toLocaleDateString("en-US", {
  
 });
 
-var employeeNameInputEl = $('#employee-name-input');
-var employeeNotesInputEl = $('#employee-notes-input');
-var trainingNameInputEl = $('#training-name-input');
-var trainingDateInputEl = $('#training-date-input');
 
 var employeeNames = [];
 var employeeNotes = [];
@@ -31,9 +27,9 @@ var trainDate2 = [];
 
 
 // printing employee data to the page
-function printEmployeeData(name, notes, trainingTaken, trainingDate) {
+// function printEmployeeData(name, notes, trainingTaken, trainingDate) {
 
-}
+// }
 
 
 // project form submission 
@@ -41,16 +37,16 @@ function printEmployeeData(name, notes, trainingTaken, trainingDate) {
     ( "trainingDate" ).datepicker();
   } );
 
-function handleProjectFormSubmit(event) {
-    event.preventDefault();
-    var employeeName = employeeNameInputEl.val().trim();
-    var employeeNotes = employeeNotesInputEl.val().trim();
-    var trainingName = trainingNameInputEl.val().trim();
-    var trainingDate = trainingDateInputEl.val().trim();
+// function handleProjectFormSubmit(event) {
+//     event.preventDefault();
+//     var employeeName = employeeNameInputEl.val().trim();
+//     var employeeNotes = employeeNotesInputEl.val().trim();
+//     var trainingName = trainingNameInputEl.val().trim();
+//     var trainingDate = trainingDateInputEl.val().trim();
   
-    printEmployeeData(employeeName, employeeNotes, trainingName, trainingDate);
+//     printEmployeeData(employeeName, employeeNotes, trainingName, trainingDate);
   
-}
+// }
 
 
 // // opens modal
@@ -124,15 +120,15 @@ window.onclick = function(event) {
 }
 
 // opens modal
-$("#Submit").click(function(){
-    $("#a").css("display","block");
-    $("#b").css("display","block");
-                });
+$("#Submit").click(function(event){
+  event.preventDefault()
+  modal.style.display = "none";
+});
 
 
-$(".Cancel").click(function(){
-    $("#a").fadeOut();
-    $("#b").fadeOut();
+$("#Cancel").click(function(event){
+  event.preventDefault()
+    modal.style.display = "none";
 });
 
 
@@ -276,7 +272,7 @@ var noteInput = document.getElementById('emp-notes').value;
 localStorage.setItem('notes', JSON.stringify(noteInput));
 //training option 1 local store
 var trainInput1 = document.getElementById('emp-training1').value;
-localStorage.setItem('training option2', JSON.stringify(trainInput1));
+localStorage.setItem('training option1', JSON.stringify(trainInput1));
 //date 1 local store
 var dateInput1 = document.getElementById('emp-date1').value;
 localStorage.setItem('date1', JSON.stringify(dateInput1));
@@ -287,5 +283,66 @@ localStorage.setItem('training option2', JSON.stringify(trainInput2));
 var dateInput2 = document.getElementById('emp-date2').value;
 localStorage.setItem('date2', JSON.stringify(dateInput2));
 
-//add a new function here that would generate a row under the correct columns to add the info to the webpage when the button is pushed
 })
+//add a new function here that would generate a row under the correct columns to add the info to the webpage when the button is pushed
+
+
+function getFromLocal () {
+ tableBody = $('#table-body');
+ retrievedName = JSON.parse(localStorage.getItem('name'))
+ retrievedNotes = JSON.parse(localStorage.getItem('notes'))
+ retrievedTraining1 = JSON.parse(localStorage.getItem('training option1'))
+ retrievedDate1 = JSON.parse(localStorage.getItem('date1'))
+ retrievedTraining2 = JSON.parse(localStorage.getItem('training option2'))
+ retrievedDate2 = JSON.parse(localStorage.getItem('date2'))
+printModalInfo()
+}
+
+function printModalInfo () {
+
+  //name local store
+var nameInput = document.getElementById('emp-name').value;
+localStorage.setItem('name', JSON.stringify(nameInput));
+//notes local store
+var noteInput = document.getElementById('emp-notes').value;
+localStorage.setItem('notes', JSON.stringify(noteInput));
+//training option 1 local store
+var trainInput1 = document.getElementById('emp-training1').value;
+localStorage.setItem('training option1', JSON.stringify(trainInput1));
+//date 1 local store
+var dateInput1 = document.getElementById('emp-date1').value;
+localStorage.setItem('date1', JSON.stringify(dateInput1));
+//training option 2 local store
+var trainInput2 = document.getElementById('emp-training2').value;
+localStorage.setItem('training option2', JSON.stringify(trainInput2));
+//date 2 local store
+var dateInput2 = document.getElementById('emp-date2').value;
+localStorage.setItem('date2', JSON.stringify(dateInput2));
+
+  var trainingRowEl = $('<tr>');
+  var trainingNameTdEl = $('<td>').addClass('p-2').text(nameInput);
+  var trainingNotesTdEl = $('<td>').addClass('p-2').text(noteInput);
+  var trainingType1TdEl = $('<td>').addClass('p-2').text(trainInput1);
+  var trainingDate1TdEl = $('<td>').addClass('p-2').text(dateInput1);
+  var trainingType2TdEl = $('<td>').addClass('p-2').text(trainInput2);
+  var trainingDate2TdEl = $('<td>').addClass('p-2').text(dateInput2);
+
+  console.log('works')
+
+trainingRowEl.append(
+  trainingNameTdEl,
+  trainingNotesTdEl,
+  trainingType1TdEl,
+  trainingDate1TdEl,
+  trainingType2TdEl,
+  trainingDate2TdEl
+  );
+
+  tableBody.append(trainingRowEl)
+
+}
+
+getFromLocal()
+
+$('#Submit').on('click', printModalInfo)
+
