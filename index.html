@@ -1,135 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Tracking Tracker App</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header class="header">
-
-        <h1 id="title">Mandatory and Special Training</h1>
-        <p id="">An application for tracking training progress/expiration dates as well as team assignments</p>
-        <p> <span id='date-time'></span>.</p>
-
-    </header>
-    
+      <h1 id="title">Training Tracker</h1>
+      <span></span>
+      <p id="instructions">
+        This is an app that will tracker your employees training dates. When an employee is current with<br>
+        there training it will show as green. If an employee is coming up on needing to recertify their<br>
+        training dates will show yellow. Your employees that are expired on their training will show red.<br>
+        There is a calendar down below to help with assigning training.<br>
+      </p>
+     </header>
     <main class="container-fluid">
-    <div class="row">
-          
+      <div class="row">
         <section>
-            <div class="table-responsive">
-                <table class="table table-bordered custom-table">
-                  <thead>
-                    <tr>
-                      <td id = "employee-name" scope="col">Name</td>
-                      <td id = "employee-notes" scope="col">Notes</td>
-                      <td id = "employee-training" scope="col">Name of Training</td>
-                      <td id = "employee-date" scope="col">Date of Training</td>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
-        </section>
-          
-        <section class="text-center">
-            <div class="card custom-card">
-              <h2 class="card-header">
-                Employee Training Information
-              </h2>
-              <div class="card-body">
-                <div class="card-text">
-                  Click the button below to open a form and provide information for the following:
-                </div>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Name</li>
-                <li class="list-group-item">Notes</li>
-                <li class="list-group-item">Training Taken</li>
-                <li class="list-group-item">Training Date</li>
-              </ul>
-              <div class="card-footer">
-                <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#training-modal" id="new-trainee-button">New Trainee</button>
-              </div>
-            </div>
-        </section>
-
-    </div>
-    </main>
-    
-    <div class="modal" id = "training-modal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Insert Employee Info</h5>
-            </div>
-            <div class="modal-body">
-                
-                <div class="form-group"></div>
-                <label for="employee-name-input">Name</label><br>
-                <input type="text" class="form-control" id="emp-name" placeholder="Enter Employee Name Here" required/>
-                
-                <div class="form-group"></div>
-                <label for="employee-notes-input">Notes</label>
-                <input type="text" class="form-control" id="emp-notes" placeholder="Enter Employee Notes Here"/>
-              
-                <div class="form-group">
-                    <label for="training-name-input">Training Taken</label>
-                    <select class="form-control" id="emp-training">
-                      <option selected disabled>Select a Training</option>
-                      <option value="training option one">training option one</option>
-                      <option value="training option two">training option two</option>
-                      <option value="training option three">training option three</option>
-                      <option value="training option four">training option four</option>
-                    </select>
-                  </div>
-
-                <div class="form-group">
-                    <label for="training-date-input">Training Date</label>
-                    <input type="text" min='1' id="emp-date" class="form-control" placeholder="Pick a Training Date"
-                      required />
-                </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-button">Close</button>
-              <button type="button" class="btn btn-primary" id="Submit">Save changes</button>
-            </div>
+          <div class="table-responsive">
+              <table class="table table-bordered custom-table">
+                <thead>
+                  <tr>
+                    <td id="name" scope="col">Name</td>
+                    <td scope="col">Notes</td>
+                    <td scope="col">Name of Training</td>
+                    <td scope="co">Date of Training</td>
+                    <td scope="col">Name of Training</td>
+                    <td scope="col">Date of Training</td>
+                  </tr>
+                </thead>
+              </table>
           </div>
-        </div>
-    </div>
+        </section>
+  <p class=" directions">Click the button below to open a form and provide information for the following:</p>
+                 
 
+    <!-- Modal  -->
+<div class="main-modal">
+
+<button id="open-modal">Open Modal</button>
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+<div id="modal-content" class="modal-content animation-1" >
+      <!-- Modal header -->
+<header class="modal-header">
+  <p class="modal-header-title">
+     Input Training
+  </p>
+</header>
+    <!-- Modal body -->
+<div class="modal-body">
+  <p>
+  <form>
+<div class="form-group"> 
+   <input class="modal-text-area form-control" id="emp-name" type="text" placeholder=" employee name"  required/>
+</div>   
+   <div class="form-group">
+   <input class="modal-text-area form-control" id="emp-notes" type="text" placeholder="notes" >
+</div>
+<div class="form-group">
+   <label for="Training-name-input"></label>
+   <select class="training modal-text-area form-control" id="emp-training1">
+   <option selected disabled>Select a Training</option>
+   <option value="training option one">DT</option>
+   <option value="training option two">ASHI</option>
+   <option value="training option three">360</option>
+   <option value="training option four">Gender Responsiveness</option>
+   <option value="training option five">UA</option>
+   <option value="training option six">ISPRA</option>
+   <option value="training option seven">Force Cell</option>
+   <option value="training option eight">Acting Armorer</option>
+   <option value="training option nine">Taser</option>
+   <option value="training option nineteen">Firearms Day 1</option>
+   <option value="training option twelve">Firearms Annual Training</option> 
+   <option value="training option ten">Low Lethal(37MM)</option>
+   <option value="training option eleven">Armed Transport</option>
+   <option value="training option thirteen">Shotgun</option>
+   <option value="training option fourteen">Shotgun - Low Light</option>
+   <option value="training option fifeteen">Rifle</option>
+   <option value="training option sixteen">Rifle - Low Light</option>
+   <option value="training option seventeen">Hand Gun</option>
+   <option value="training option eighteen">Hand Gun - Low Light</option>
+  </select>
+</div>
+<div class="form-group">   
+  <input class="training modal-text-area form-control" id="emp-date1" type="date"  placeholder="date taken" />
+</div>  
+<div class="form-group">  
+   <label for="Training-name-input"></label>
+   <select class="training modal-text-area form-control" id="emp-training2">
+   <option selected disabled>Select a Training</option>
+   <option value="training option one">DT</option>
+   <option value="training option two">ASHI</option>
+   <option value="training option three">360</option>
+   <option value="training option four">Gender Responsiveness</option>
+   <option value="training option five">UA</option>
+   <option value="training option six">ISPRA</option>
+   <option value="training option seven">Force Cell</option>
+   <option value="training option eight">Acting Armorer</option>
+   <option value="training option nine">Taser</option>
+   <option value="training option nineteen">Firearms Day 1</option>
+   <option value="training option twelve">Firearms Annual Training</option> 
+   <option value="training option ten">Low Lethal(37MM)</option>
+   <option value="training option eleven">Armed Transport</option>
+   <option value="training option thirteen">Shotgun</option>
+   <option value="training option fourteen">Shotgun - Low Light</option>
+   <option value="training option fifeteen">Rifle</option>
+   <option value="training option sixteen">Rifle - Low Light</option>
+   <option value="training option seventeen">Hand Gun</option>
+   <option value="training option eighteen">Hand Gun - Low Light</option>
+   </select>
+</div>
+<div class="form-group">   
+    <input class="training modal-text-area form-control" id="emp-date2" type="date"  placeholder="date taken" />
+</div>
+  </p>
+</div>
+<div class= "modal-buttons">
+    <button id="Submit">Submit</button>
+    <button>Cancel</button>
+</div>
+    <!-- Modal footer -->
+  <footer class="modal-footer">
+  </footer>
+</div>
+</div>
+<!-- MODAL -->
+    
+</main>
+ 
     <!-- Calender -->
-    <div id="calendar-box">
-      <div id='script-warning'>
-      <!-- <code>php/get-events.php</code> must be running. -->
-      </div>
-      <div id='loading'>loading...</div>
-      <div id='calendar'></div>
-    </div>
+<div id="calendar-box">
+<div id="script-warning">
+        <!-- <code>php/get-events.php</code> must be running. -->
+</div>
+<div id="loading">loading...</div>
+<div id="calendar"></div>
+</div>
     <!-- counterAPI library, insert anywhere on the page. -->
     <!-- Add the counter instance somewhere to your template... -->
-    <div class="counterapi"  >
-    <script src="https://counterapi.com/c.js" async ></script>
-    </div>
+<div class="counterapi">
+  <script src="https://counterapi.com/c.js" async></script>
+</div>
 
-
-
-
-    <footer class="footer">
-
-        <h5>©CCC</h5>
-
-    </footer>
-    <script src='./assets/js/ical.js'></script>
-    <script src='./assets/js/main.js'></script>
+<footer class="footer">
+   <h2>©CCC</h2>
+</footer>
+    <script src="./assets/js/ical.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
