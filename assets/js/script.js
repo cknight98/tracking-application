@@ -5,10 +5,12 @@ dateTime.textContent = new Date().toLocaleDateString("en-US", {
   year: "numeric",
   hour: "numeric",
   minute: "numeric"
- 
 });
 
-
+var employeeNameInputEl = $('#employee-name-input');
+var employeeNotesInputEl = $('#employee-notes-input');
+var trainingNameInputEl = $('#training-name-input');
+var trainingDateInputEl = $('#training-date-input');
 var employeeNames = [];
 var employeeNotes = [];
 var trainName1 = [];
@@ -17,53 +19,8 @@ var trainDate1 = [];
 var trainDate2 = [];
 
 
-
-
-// displays current time and date in header
-// const day = document.createElement("h1");
-// day.textContent = new Date(utcTime).toLocaleDateString("en-US",{day:"numeric", month: "short", year:"numeric"});
-
-
-
-
-// printing employee data to the page
-// function printEmployeeData(name, notes, trainingTaken, trainingDate) {
-
-// }
-
-
-// project form submission 
-( function() {
-    ( "trainingDate" ).datepicker();
-  } );
-
-// function handleProjectFormSubmit(event) {
-//     event.preventDefault();
-//     var employeeName = employeeNameInputEl.val().trim();
-//     var employeeNotes = employeeNotesInputEl.val().trim();
-//     var trainingName = trainingNameInputEl.val().trim();
-//     var trainingDate = trainingDateInputEl.val().trim();
-  
-//     printEmployeeData(employeeName, employeeNotes, trainingName, trainingDate);
-  
-// }
-
-
-// // opens modal
-// $('#new-trainee-button').on('click', function() {
-//     console.log("button works")
-//     $('#training-modal').show();
-// });
-
-// // closes modal
-// $('#close-button').on('click', function() {
-//     console.log("button works")
-//     $('#training-modal').hide();
-// });
 /* CALENDER API  */
 
-
-/* CALENDER API  */
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
@@ -327,7 +284,7 @@ localStorage.setItem('date2', JSON.stringify(dateInput2));
   var trainingType2TdEl = $('<td>').addClass('p-2').text(trainInput2);
   var trainingDate2TdEl = $('<td>').addClass('p-2').text(dateInput2);
 
-  console.log('works')
+  
 
 trainingRowEl.append(
   trainingNameTdEl,
@@ -345,4 +302,3 @@ trainingRowEl.append(
 getFromLocal()
 
 $('#Submit').on('click', printModalInfo)
-

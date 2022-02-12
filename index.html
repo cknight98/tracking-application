@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/calendar.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Tracking Tracker App</title>
   </head>
@@ -13,7 +13,7 @@
     <header class="header">
       <h1 id="title">Training Tracker</h1>
       <span></span>
-      <p id="instructions">
+      <p id="explanation">
         This is an app that will tracker your employees training dates. When an employee is current with<br>
         there training it will show as green. If an employee is coming up on needing to recertify their<br>
         training dates will show yellow. Your employees that are expired on their training will show red.<br>
@@ -27,12 +27,12 @@
               <table class="table table-bordered custom-table">
                 <thead>
                   <tr>
-                    <td id="name" scope="col">Name</td>
-                    <td scope="col">Notes</td>
-                    <td scope="col">Name of Training</td>
-                    <td scope="col">Date of Training</td>
-                    <td scope="col">Name of Training</td>
-                    <td scope="col">Date of Training</td>
+                    <td class="row-name" id="name" scope="col">Name</td>
+                    <td class="row-name"scope="col">Notes</td>
+                    <td class="row-name"scope="col">Name of Training</td>
+                    <td class="row-name"scope="col">Date of Training</td>
+                    <td class="row-name"scope="col">Name of Training</td>
+                    <td class="row-name"scope="col">Date of Training</td>
                   </tr>
                 </thead>
                 <tbody id ="table-body"></tbody>
@@ -60,14 +60,14 @@
   <p>
   <form>
 <div class="form-group"> 
-   <input class="modal-text-area form-control" id="emp-name" type="text" placeholder=" employee name"  required/>
+   <input class="training modal-text-area form-control" id="emp-name" type="text" placeholder=" employee name"  required/>
 </div>   
    <div class="form-group">
-   <input class="modal-text-area form-control" id="emp-notes" type="text" placeholder="notes" >
+   <input class="training modal-text-area form-control" id="emp-notes" type="text" placeholder="notes" >
 </div>
 <div class="form-group">
    <label for="Training-name-input"></label>
-   <select class="training modal-text-area form-control" id="emp-training1">
+   <select class="training-select modal-text-area form-control" id="emp-training1">
    <option selected disabled>Select a Training</option>
    <option value="training option one">DT</option>
    <option value="training option two">ASHI</option>
@@ -95,7 +95,7 @@
 </div>  
 <div class="form-group">  
    <label for="Training-name-input"></label>
-   <select class="training modal-text-area form-control" id="emp-training2">
+   <select class="training-select modal-text-area form-control" id="emp-training2">
    <option selected disabled>Select a Training</option>
    <option value="training option one">DT</option>
    <option value="training option two">ASHI</option>
@@ -154,7 +154,7 @@
    <h2>©CCC</h2>
 </footer>
     <script src="./assets/js/ical.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/calendar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
