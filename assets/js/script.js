@@ -53,8 +53,9 @@ $('#close-button').on('click', function() {
     console.log("button works")
     $('#training-modal').hide();
 });
-/* CALENDER API  */
 
+
+/* CALENDER API  */
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
@@ -84,17 +85,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  
-function saveEntries () {
 
+//these functions below should put the entered info into local storage when they are done
   function saveName() {
     for (let j = 0; j < employeeNames.length; j++) {
-        var plannedEvent = employeeNames[j];
-        var savedEvent = document.getElementById(`${plannedEvent}`);
-        // planned event needs to be a different ID, it needs to be the ID's of the different entries
-        var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
-        if (storedEvent !== null) {
-            savedEvent.setAttribute("value", storedEvent);
+        var plannedName = employeeNames[j];
+        var savedName = document.getElementById('emp-name');
+        var storedName = JSON.parse(localStorage.getItem(`${plannedName}`));
+        if (storedName !== null) {
+            savedName.setAttribute("value", storedName);
         }
     }
 }
@@ -102,12 +101,11 @@ saveName ();
 
 function saveNotes() {
   for (let j = 0; j < employeeNotes.length; j++) {
-      var plannedEvent = employeeNotes[j];
-      var savedEvent = document.getElementById(`${plannedEvent}`);
-      // planned event needs to be a different ID, it needs to be the ID's of the different entries
-      var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
-      if (storedEvent !== null) {
-          savedEvent.setAttribute("value", storedEvent);
+      var plannedNote = employeeNotes[j];
+      var savedNote = document.getElementById('emp-notes');
+      var storedNote = JSON.parse(localStorage.getItem(`${plannedNote}`));
+      if (storedNote !== null) {
+          savedNote.setAttribute("value", storedNote);
       }
   }
 }
@@ -115,12 +113,11 @@ saveNotes();
 
 function saveTraining() {
   for (let j = 0; j < trainName.length; j++) {
-      var plannedEvent = trainName[j];
-      var savedEvent = document.getElementById(`${plannedEvent}`);
-      // planned event needs to be a different ID, it needs to be the ID's of the different entries
-      var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
-      if (storedEvent !== null) {
-          savedEvent.setAttribute("value", storedEvent);
+      var plannedTraining = trainName[j];
+      var savedTraining = document.getElementById('emp-training');
+      var storedTraining = JSON.parse(localStorage.getItem(`${plannedTraining}`));
+      if (storedTraining !== null) {
+          savedTraining.setAttribute("value", storedTraining);
       }
   }
 }
@@ -128,20 +125,19 @@ saveTraining();
 
 function saveDate() {
   for (let j = 0; j < trainDate.length; j++) {
-      var plannedEvent = trainDate[j];
-      var savedEvent = document.getElementById(`${plannedEvent}`);
-      // planned event needs to be a different ID, it needs to be the ID's of the different entries
-      var storedEvent = JSON.parse(localStorage.getItem(`${plannedEvent}`));
-      if (storedEvent !== null) {
-          savedEvent.setAttribute("value", storedEvent);
+      var plannedDate = trainDate[j];
+      var savedDate = document.getElementById('emp-date');
+      var storedDate = JSON.parse(localStorage.getItem(`${plannedDate}`));
+      if (storedDate !== null) {
+          savedDate.setAttribute("value", storedDate);
       }
   }
 }
 saveDate();
-}
-saveEntries();
 
 
+
+// this string of functions logs the info entered in the modal to the console and adds the info to the associated arrays
 function pushName (){
   namevalue = document.getElementById('emp-name').value;
   employeeNames.push(namevalue);
@@ -166,10 +162,33 @@ function pushDate () {
   console.log(trainDate);
 }
 
+// this function should: 
+// push modal info to array(does do this) 
+// logs array data to console(does do this) 
+// adds info to local storage (does do this)
+// generates a row of data on the webpage to display the entered info (doesnt do this yet)
 document.getElementById('Submit').addEventListener('click',function (){
   pushName();
   pushNotes();
   pushTraining();
   pushDate();
+  saveName();
+  saveNotes();
+  saveTraining();
+  saveDate();
+  //name local store
+  var nameInput = document.getElementById('emp-name').value;
+  localStorage.setItem('name', JSON.stringify(nameInput));
+  //notes local store
+  var noteInput = document.getElementById('emp-notes').value;
+  localStorage.setItem('notes', JSON.stringify(noteInput));
+  //training option local store
+  var trainInput = document.getElementById('emp-training').value;
+  localStorage.setItem('training option', JSON.stringify(trainInput));
+  //date local store
+  var dateInput = document.getElementById('emp-date').value;
+  localStorage.setItem('date', JSON.stringify(dateInput));
+
+  //add a new function here that would generate a row under the correct columns to add the info to the webpage when the button is pushed
 })
- //this function doesn't seem to be logging to the console or saving to local 
+ 
