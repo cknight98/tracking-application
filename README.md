@@ -75,24 +75,24 @@
 
 <p align= "center" style= "color:#b38d25">Modal</p>
 
-![Modal](/assets/images/Screenshot-main.jpg)
+![Modal](/assets/images/Screenshot-modal.jpg)
 
 <br>
 
 <p align= "center" style= "color:#b38d25">Interaction with Modal and Page</p>
 
-![Modal Interacting wirh Page](/assets/images/Screenshot-main.jpg)
-
-<br>
-
-<p align= "center" style= "color:#b38d25">Email API</p>
-
-![Email API](/assets/images/Screenshot-main.jpg)
+![Modal Interacting with Page](/assets/images/Screenshot-interaction.jpg)
 
 <br>
 
 <p align= "center" style= "color:#b38d25">Calender API</p>
 
-![Calender API](/assets/images/Screenshot-main.jpg)
+![Calender API](/assets/images/Screenshot-calendar.jpg)
+
+<br>
+
+<p align= "center" style= "color:#b38d25">Counter API</p>
+
+![Counter API](/assets/images/Screenshot-counterapi.jpg)
 
 <br>

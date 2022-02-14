@@ -210,8 +210,9 @@ form {
 .training {
   width: 88%;
   padding: 3pt;
-  cursor: text;
+   cursor: text;
   background-color: #ffffff;
+  color: #000000
 }
 
 .training-select {
@@ -219,6 +220,7 @@ form {
   padding:3pt;
   cursor: pointer;
   background-color: #ffffff;
+  color: #000000;
 }
 
 .modal-buttons {
