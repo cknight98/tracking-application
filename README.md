@@ -19,7 +19,7 @@
 <h1 style= "color:#883030">Completed</h1>
 <p align= "center">
 <li>We used two server-side APIs (Calender API and Page Counter API)</li>
-<li>We used CSS framework</li>
+<li>We used tailwid CSS framework for the table</li>
 <li>To save our data we use the localstorage</li>
 <li>The app uses a modal to put info on the page</li>
 </p>
@@ -56,13 +56,6 @@
 
 
 <h1 style= "color:#883030">What it looks like</h1>
-
-
-<p align= "center" style= "color:#b38d25">Video of the operational Page</p>
-
-![Video](/assets/images/Screenshot-main.jpg)
-
-<br>
 
 
 <br>
