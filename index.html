@@ -1,37 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/calendar.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
-</head>
-<body>
+    <title>Tracking Tracker App</title>
+  </head>
+  <body>
     <header class="header">
-        <h1 id="title">Mandatory and Special Training</h1>
-        <p id="">An application for tracking training progress/expiration dates as well as team assignments</p>
-        <p id="1a"></p>
-    </header>
+      <h1 id="title">Training Tracker</h1>
+      <span></span>
+      <p id="explanation">
+        This is an app that will track your employees training dates.
+        There is a calendar down below to help with assigning training.<br>
+      </p>
+     </header>
+    <main class="container-fluid">
+      <div class="container flex justify-center mx-auto">
+        <section>
+          <div class="flex flex-col">
+              <div class="table-responsive">
+                <div class="w-full">
+                      <div class="border-b border-gray-200 shadow">
+                      <table>
+                        <thead class="bg-gray-50">
+                          <tr>
+                            <th class="px-20 py-1 text-md text-black-5000 row-name" id= "name">Name</th>
+                            <th class="px-20 py-1 text-md text-black-500 row-name" id= "notes">Notes</th>
+                            <th class="px-10 py-1 text-md text-black-500 row-name" id= "training-one">Name of Training</th>
+                            <th class="px-2 py-1 text-md text-black-500 row-name"id= "date-one">Date of Training</th>
+                            <th class="px-10 py-1 text-md text-black-500 row-name"id= "training-two">Name of Training</th>
+                            <th class="px-2 py-1 text-md text-black-500 row-name" id= "training-two">Date of Training</th>
+                          </tr>
+                        </thead>                
+                      <tbody id="table-body">
+                      </tbody>
+                   </table>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <section>
+          <p class=" directions">Click the button below to open a form and provide information for the following:</p>
+        </section>
+    <!-- Modal  -->
+<div class="main-modal">
 
-    <table>
-       
-        <tr class="row">
-          
-          <td><textarea>Name</textarea></td>
-          <td><textarea>Training #</textarea></td>
-          <td><textarea>Special Team</textarea></td>
-          <td><textarea>DT Expires</textarea></td>
-          <td><textarea>DT Scheduled</textarea></td>
-          <td><textarea>ASHI Expires</textarea></td>
-          <td><textarea>ASHI Scheduled</textarea></td>
+<button id="open-modal">Open Modal</button>
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+<div id="modal-content" class="modal-content animation-1" >
+      <!-- Modal header -->
+<header class="modal-header">
+  <p class="modal-header-title">
+     Input Training
+  </p>
+</header>
+    <!-- Modal body -->
+<div class="modal-body">
+  <p>
+  <form>
+<div class="form-group"> 
+   <input class="training modal-text-area form-control" id="emp-name" type="text" placeholder=" employee name"  required/>
+</div>   
+   <div class="form-group">
+   <input class="training modal-text-area form-control" id="emp-notes" type="text" placeholder="notes" >
+</div>
+<div class="form-group">
+   <label for="Training-name-input"></label>
+   <select class="training-select modal-text-area form-control" id="emp-training1">
+   <option selected disabled>Select a Training</option>
+   <option value="DT">DT</option>
+   <option value="ASHI">ASHI</option>
+   <option value="360">360</option>
+   <option value="Gender Responsiveness">Gender Responsiveness</option>
+   <option value="UA">UA</option>
+   <option value="ISPRA">ISPRA</option>
+   <option value="Force Cell">Force Cell</option>
+   <option value="Acting Armorer">Acting Armorer</option>
+   <option value="Taser">Taser</option>
+   <option value="Firearms Day 1">Firearms Day 1</option>
+   <option value="Firearms Annual Training">Firearms Annual Training</option> 
+   <option value="Low Lethal(37MM)">Low Lethal(37MM)</option>
+   <option value="Armed Transport">Armed Transport</option>
+   <option value="Shotgun">Shotgun</option>
+   <option value="Shotgun - Low Light">Shotgun - Low Light</option>
+   <option value="Rifle">Rifle</option>
+   <option value="Rifle - Low Light">Rifle - Low Light</option>
+   <option value="Hand Gun">Hand Gun</option>
+   <option value="Hand Gun - Low Light">Hand Gun - Low Light</option>
+  </select>
+</div>
+<div class="form-group">   
+  <input class="training modal-text-area form-control" id="emp-date1" type="date"  placeholder="date taken" />
+</div>  
+<div class="form-group">  
+   <label for="Training-name-input"></label>
+   <select class="training-select modal-text-area form-control" id="emp-training2">
+   <option selected disabled>Select a Training</option>
+   <option value="DT">DT</option>
+   <option value="ASHI">ASHI</option>
+   <option value="360">360</option>
+   <option value="Gender Responsiveness">Gender Responsiveness</option>
+   <option value="UA">UA</option>
+   <option value="ISPRA">ISPRA</option>
+   <option value="Force Cell">Force Cell</option>
+   <option value="Acting Armorer">Acting Armorer</option>
+   <option value="Taser">Taser</option>
+   <option value="Firearms Day 1">Firearms Day 1</option>
+   <option value="Firearms Annual Training">Firearms Annual Training</option> 
+   <option value="Low Lethal(37MM)">Low Lethal(37MM)</option>
+   <option value="Armed Transport">Armed Transport</option>
+   <option value="Shotgun">Shotgun</option>
+   <option value="Shotgun - Low Light">Shotgun - Low Light</option>
+   <option value="Rifle">Rifle</option>
+   <option value="Rifle - Low Light">Rifle - Low Light</option>
+   <option value="training option seventeen">Hand Gun</option>
+   <option value="training option eighteen">Hand Gun - Low Light</option>
+   </select>
+</div>
+<div class="form-group">   
+    <input class="training modal-text-area form-control" id="emp-date2" type="date"  placeholder="date taken" />
+</div>
+  </p>
+</div>
+<div class= "modal-buttons">
+    <button id="Submit">Submit</button>
+    <button id="Cancel">Cancel</button>
+</div>
+    <!-- Modal footer -->
+  <footer class="modal-footer">
+  </footer>
+</div>
+</div>
+<!-- MODAL -->
+    
+</main>
+ 
+    <!-- Calender -->
+<div id="calendar-box">
+<div id="script-warning">
+        <!-- <code>php/get-events.php</code> must be running. -->
+</div>
+<div id="loading">loading...</div>
+<div id="calendar"></div>
+</div>
+    <!-- counterAPI library, insert anywhere on the page. -->
+    <!-- Add the counter instance somewhere to your template... -->
+<div class="counterapi">
+  <script src="https://counterapi.com/c.js" async></script>
+</div>
 
-        </tr>
-
-    </table>
-
+<footer class="footer">
+   <h2>©CCC</h2>
+</footer>
+    <script src="./assets/js/ical.js"></script>
+    <script src="./assets/js/calendar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
